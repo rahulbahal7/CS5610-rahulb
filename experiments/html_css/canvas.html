@@ -1,0 +1,98 @@
+<html>
+<head>
+    <title>HTML5 Canvas</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+
+        h2 {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            font-size: 20px;
+            padding-top: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <center>
+        <h3> Canvas Experiments</h3>
+        <script>
+            window.onload = function () {
+                var w3rcanvas = document.getElementById("canvas1");
+                var w3rcontext = w3rcanvas.getContext('2d');
+                var w3rgradient = w3rcontext.createRadialGradient(150, 150, 0, 150, 150, 150);
+                w3rgradient.addColorStop("0", "black");
+                w3rgradient.addColorStop(".25", "blue");
+                w3rgradient.addColorStop(".50", "white");
+                w3rgradient.addColorStop(".80", "cyan");
+                w3rgradient.addColorStop("1.0", "red");
+                w3rcontext.fillStyle = w3rgradient;
+                w3rcontext.fillRect(0, 0, 200, 200);
+            }
+        </script>
+
+        <h2>Gradient Effect</h2><br />
+        <canvas id="canvas1" width="200" height="200"></canvas>
+
+        <h2>Bouncing Ball</h2>
+        <canvas id="canvas_demo" width="400" height="240">Canvas not supported, Sorry!</canvas>
+
+        <script type="text/javascript">
+            var canvas;
+            var context;
+            var WIDTH = 400;
+            var HEIGHT = 240;
+            var x = 200;
+            var y = 120;
+            var mx = 2;
+            var my = 4;
+
+            function circle(x, y, r) {
+                context.beginPath();
+                context.arc(x, y, r, 0, Math.PI * 2, true);
+                context.fill();
+            }
+
+            function clear() {
+                context.clearRect(0, 0, WIDTH, HEIGHT);
+            }
+
+            function init() {
+                canvas = document.getElementById("canvas_demo");
+                context = canvas.getContext("2d");
+                return setInterval(draw, 10);
+            }
+
+            function draw() {
+                clear();
+                context.fillStyle = 'gray';
+                context.fillRect(0, 0, 400, 240);
+                circle(x, y, 20);
+
+                context.fillStyle = '#5CD6FF';
+                context.fill();
+
+                if (x + mx > (WIDTH - 20) || x + mx < 20)
+                    mx = -mx;
+                if (y + my > (HEIGHT - 20) || y + my < 20)
+                    my = -my;
+
+                x += mx;
+                y += my;
+
+            }
+
+            init();
+        </script>
+    </center>
+
+    <a href="../../fileview/Default.aspx?~/experiments/html_css/canvas.html" target="_blank">
+        <p class="register-source">View Source</p>
+    </a>
+   
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Advanced_animations" target="_blank">
+        <p class="register-source">Reference</p>
+    </a>
+    </div>
+</body>
+</html>

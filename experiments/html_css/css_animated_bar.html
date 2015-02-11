@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animated Bar</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+<style> 
+.bar1 {  
+    width: 20px;
+    height: 20px;
+    padding-left:30px;
+    margin-bottom:50px;
+    background-color: blue;
+    margin:auto;
+    vertical-align: middle;
+    position: center;
+    float: left;
+    -webkit-animation: init 5s infinite ; 
+    animation: 5s;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+}
+@-webkit-keyframes 
+init {
+    from, 15%  {background:red; margin-top: 0px; height: 200px;}
+    26%, 42%  {background:blue; margin-top: 190px;height: 10px;} 
+    42%, 75%  {background:orange; margin-top: 170px;height: 30px;}
+    75%, 90% {background:orange; margin-top: 20px;height: 180px;}
+	90%, 100% {background:red; margin-top: 0px;height: 200px;}
+    }
+</style>
+</head>
+<body>
+    <center>
+    <h3>Animated Bar</h3>
+    <h1>(with CSS3)</h1>
+<div class = "bar1"></div>
+</div>
+    <a href="../../fileview/Default.aspx?~/experiments/html_css/css_animated_bar.html" target="_blank">
+        <p class="register-source">View Source</p>
+    </a>
+        <a href="http://www.w3schools.com/cssref/css3_pr_animation-duration.asp" target="_blank">
+            <p class="register-source">Reference</p>
+        </a>
+    </center>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<head>
+   <title>jQuery UI Sortable - Example</title>
+   <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+   <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+   <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+   <link rel="stylesheet" type="text/css" href="css/sortable.css">
+   <script type="text/javascript" src="js/sortable.js"></script>
+</head>
+<body>
+<p> The elements in the following matrix can be moved around using "sortable"</p>
+<p><br>
+   CODE:<br><br>
+   $( "#sort1, #sort2" ).sortable({<br>
+            connectWith: "#sort1, #sort2"<br>
+         });<br>
+         $( "#sort3").sortable({<br>
+            connectWith: "#sort1",<br>
+            dropOnEmpty: false<br>
+         });<br>
+   </p>
+   <ul id="sort1"><h3>List 1</h3>
+      <li class="default">A</li>
+      <li class="default">B</li>
+      <li class="default">C</li>
+      <li class="default">D</li>
+   </ul>
+   <ul id="sort2"><h3>List 2</h3>
+      <li class="default">a</li>
+      <li class="default">b</li>
+      <li class="default">c</li>
+      <li class="default">d</li>
+   </ul>
+   <ul id="sort3"><h3>List 3</h3>
+      <li class="default">e</li>
+      <li class="default">f</li>
+      <li class="default">g</li>
+      <li class="default">h</li>
+   </ul><br>
+   <div>
+   <center>
+			<a href="../../fileview/Default.aspx?~/experiments/jquery_ajax/sortable.html">View HTML</a> |
+			<a href="../../fileview/Default.aspx?~/experiments/jquery_ajax/css/sortable.css">View CSS</a> | 
+			<a href="../../fileview/Default.aspx?~/experiments/jquery_ajax/js/sortable.js">View JS</a> | 
+			<a href="http://jqueryui.com/sortable/">Reference</a>
+			<br><br>
+	</center>
+	</div>
+</body>
+</html>

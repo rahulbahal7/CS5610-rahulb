@@ -1,0 +1,133 @@
+﻿<html>
+<head>
+    <meta charset='UTF-8'>
+    <title>Responsive Menu</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        @media only screen and ( max-width: 760px ) {
+            .below {
+                display: none;
+            }
+
+            #nav {
+                position: relative;
+            }
+
+                #nav > a {
+                }
+
+                #nav:not( :target ) > a:first-of-type,
+                #nav:target > a:last-of-type {
+                    display: block;
+                }
+
+                /* first level */
+
+                #nav > ul {
+                    height: 150px;
+                    display: none;
+                    background-color: lightgray;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                }
+
+                #nav:target > ul {
+                    display: block;
+                }
+
+                #nav > ul > li {
+                    width: 100%;
+                    float: none;
+                }
+
+                /* second level */
+
+                #nav li ul {
+                    position: static;
+                }
+        }
+
+        a{
+            text-decoration:none;
+        }
+
+        #nav {
+            height: 150px;
+            background-color:lightgray;
+            margin-bottom: 50px;
+            
+        }
+
+            #nav > a {
+                display: none;
+                text-decoration:none;
+            }
+
+            #nav li {
+                position: relative;
+            }
+
+            /* first level */
+
+            #nav > ul {
+                height: 40px;
+
+            }
+
+                #nav > ul > li {
+                    width: 25%;
+                    height: 100%;
+                    float: left;
+                }
+
+            /* second level */
+
+            #nav li ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+            }
+
+            #nav li:hover ul {
+                display: block;
+            }
+    </style>
+</head>
+<body>
+    <center><h3>Simple Responsive Menu</h3></center>
+    <center><h1>Resize the browser</h1></center>
+       <nav id="nav" role="navigation">
+        <a href="#nav" title="Show navigation">Show navigation</a>
+        <a href="#" title="Hide navigation">Hide navigation</a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>
+                <a href="/" aria-haspopup="true">Blog</a>
+                <ul>
+                    <li><a href="/">Entry 1</a></li>
+                    <li><a href="/">Entry 2</a></li>
+                    <li><a href="/">Entry 3</a></li>
+                    <li><a href="/">Entry 4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/" aria-haspopup="true">Work</a>
+                <ul>
+                    <li><a href="/">Work 1</a></li>
+                    <li><a href="/">Work 2</a></li>
+                    <li><a href="/">Work 3</a></li>
+                </ul>
+            </li>
+            <li><a href="/">About Me!</a></li>
+        </ul>
+    </nav>
+    <hr />
+    <a href="../../fileview/Default.aspx?~/experiments/html_css/responsive_menu.html" target="_blank">
+        <p class="register-source">View Source</p>
+    </a>
+    <a href="http://css-tricks.com/responsive-menu-concepts/" target="_blank">
+        <p class="register-source">Reference</p>
+    </a>
+</body>
+</html>

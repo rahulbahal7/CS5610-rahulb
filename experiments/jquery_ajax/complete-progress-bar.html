@@ -1,0 +1,50 @@
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Progress Bar with Status</title>
+      <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/complete-progress-bar.css">
+      <script type="text/javascript" src="js/complete-progress-bar.js"></script>
+   </head>
+   <body>
+   <p> This is a progress bar with Status using JQuery UI</p>
+      <div id="progressbar">
+         <center><div class="progress-label">
+            Loading...
+         </div>
+		 </center>
+      </div>
+	  <p>
+	  CODE:<br><br>
+	  var progressbar = $( "#progressbar" );<br>
+         progressLabel = $( ".progress-label" );<br>
+         $( "#progressbar" ).progressbar({<br>
+            value: false,<br>
+            change: function() {<br>
+               progressLabel.text( <br>
+                  progressbar.progressbar( "value" ) + "%" );<br>
+            },<br>
+            complete: function() {<br>
+               progressLabel.text( "Loading Completed!" );<br>
+            }<br>
+         });<br>
+         function progress() {<br>
+            var val = progressbar.progressbar( "value" ) || 0;<br>
+            progressbar.progressbar( "value", val + 1 );<br>
+            if ( val < 99 ) {<br>
+               setTimeout( progress, 100 );<br>
+            }<br>
+         }<br>
+         setTimeout( progress, 3000 );<br>
+	  </p>
+	  <center>
+			<a href="../../fileview/Default.aspx?~/experiments/jquery_ajax/complete-progress-bar.html">View HTML</a> |
+			<a href="../../fileview/Default.aspx?~/experiments/jquery_ajax/css/complete-progress-bar.css">View CSS</a> | 
+			<a href="../../fileview/Default.aspx?~/experiments/jquery_ajax/js/complete-progress-bar.js">View JS</a> | 
+			<a href="http://jqueryui.com/progressbar/">Reference</a>
+			<br><br>
+	</center>
+   </body>
+</html>

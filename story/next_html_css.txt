@@ -1,0 +1,7 @@
+﻿../experiments/html_css/canvas.html					HTML5 Canvas
+../experiments/html_css/form.html					Stylized HTML Form
+../experiments/html_css/responsive_menu.html		Responsive Menu
+../experiments/html_css/responsive_cols.html		Responsive Columns(CSS3)
+../experiments/html_css/css_animated_bar.html		Animated Bar(CSS3)
+
+

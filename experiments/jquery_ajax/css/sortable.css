@@ -1,0 +1,26 @@
+   p {
+	width: 40%;	
+	height: auto;
+    background-color:black;
+    color:white;
+    border:1px solid grey;
+    padding:10px;
+    margin:30px;
+    font-size:125%;
+}
+#sort1, #sort2,#sort3 { 
+         list-style-type: none; margin: 0; padding: 0;
+         width: 33%;
+		 padding-bottom:100px;
+		 float:left
+		 }
+      #sort1 li, #sort2 li,#sort3 li { 
+         margin: 0 3px 3px 3px; padding: 0.4em; 
+      padding-left: 1.5em; font-size: 17px; height: 16px; }
+      .default {
+         background: #cedc98;
+         border: 1px solid #DDDDDD;
+         color: #333333;
+      }
+	  
+	

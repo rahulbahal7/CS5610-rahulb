@@ -1,0 +1,38 @@
+form {
+			width: 400px;
+			margin: 0px auto;
+		}
+		input {
+			display: block;
+		}
+		
+		input:not([type=submit]):invalid {
+			background-color: #ffdddd;
+		}
+		
+		input:not([type=submit]):valid {
+			background-color: #ddffdd;
+		}
+		
+		input:not([type=submit]):invalid:required {
+			background: #ffdddd no-repeat right top; 
+		}
+		
+		input:not([type=submit]):valid:required {
+			background: #ddffdd no-repeat right top; 
+		}
+
+		input:not([type=submit]):optional {
+			background-color: #add1ef;
+		}
+		
+p {
+	width: 40%;	
+	height: auto;
+    background-color:black;
+    color:white;
+    border:1px solid grey;
+    padding:10px;
+    margin:30px;
+    font-size:125%;
+}

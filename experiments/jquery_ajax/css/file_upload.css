@@ -1,0 +1,19 @@
+ p {
+	width: 40%;	
+	height: auto;
+    background-color:black;
+    color:white;
+    border:1px solid grey;
+    padding:10px;
+    margin:30px;
+    font-size:125%;
+}
+#dropzone {
+	border: 2px dashed #ccc;
+	width: auto;
+	height: 200px;
+	margin-top: 150px;
+	text-align: center;
+	font-size: 25px;
+	font-family: Arial;
+}

@@ -1,0 +1,68 @@
+﻿<html>
+<head>
+    <title>Form Local Storage</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/form_state.css">
+	<script type="text/javascript" src="js/form_state.js"></script>	
+</head>
+<body>
+    <div id="page">
+        <section id="signup">
+		<p> This experiment demonstrates the persistence of state in a form using local storage</p>
+			
+			<form name="signup-form">
+				<label for="firstname">Firstname:</label>
+				<input id="firstname" name="firstname" type="text" title="Please enter your firstname" placeholder="First Name" autofocus="" required="">
+				
+				<label for="surname">Surname:</label>
+				<input id="surname" name="surname" type="text" title="Please enter your surname" placeholder="Last Name" required="">
+				
+				<label for="email">Email:</label>
+				<input id="email" name="email" type="email" title="Please enter your email address" placeholder="john@domain.com" required="">
+				
+				<label for="website">Website:</label>
+				<input id="website" name="website" type="url" title="Please enter the url to your website (optional)" placeholder="www.example.com">
+				
+				<label for="password">Password:</label>
+				<input id="password" name="password" type="password" title="Please enter a password, it must contain at least 1 lowercase and 1 uppercase character and be at least 6 characters in length" pattern="^.*(?=.{6,})(?=.*[a-z])(?=.*[A-Z]).*$" placeholder="******" required="">
+				
+				<label for="checkbox">Checked?:</label>
+				<input id="checkbox" name="checkbox" type="checkbox">
+				
+				<label for="checkbox">Checked 2?:</label>
+				<select id="options" name="options">
+					<option value="opt-1">val 1</option>
+					<option value="opt-2">val 2</option>
+					<option value="opt-3">val 3</option>
+					<option value="opt-4">val 4</option>
+				</select>
+				<input type="submit" value="Submit!">
+			</form>
+		</section>
+    </div>
+		<p>
+		CODE:<br><br>
+		function on_change(event) {<br>
+				var input = $(event.target);<br>
+				var key = input.parents('form:first').attr('name');<br>
+				var data = JSON.parse(localStorage[key]);<br>
+				
+				if(input.attr('type') == 'radio' || input.attr('type') == 'checkbox') {<br>
+					data[input.attr('name')] = input.is(':checked');<br>
+				}else {<br>
+					data[input.attr('name')] = input.val();<br>
+				}<br>
+				
+				localStorage[key] = JSON.stringify(data);<br>
+			}		<br>
+		</p>
+		 <center">
+			<a href="../../fileview/Default.aspx?~/experiments/jquery_ajax/form_state.html">View HTML</a> |
+			<a href="../../fileview/Default.aspx?~/experiments/jquery_ajax/css/form_state.css">View CSS</a> | 
+			<a href="../../fileview/Default.aspx?~/experiments/jquery_ajax/js/form_state.js">View JS</a> | 
+			<a href="http://www.developerdrive.com/2013/08/jquery-plugin-for-caching-forms-using-html5-local-storage/">Reference</a>
+			<br><br>
+		</center>
+</body>
+</html>

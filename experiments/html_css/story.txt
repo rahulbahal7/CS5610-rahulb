@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../experiments/html_css/       What is Next?
+canvas.html					HTML5 Canvas
+form.html					Stylized HTML Form
+responsive_menu.html		Responsive Menu
+responsive_cols.html		Responsive Columns(CSS3)
+css_animated_bar.html		Animated Bar(CSS3)

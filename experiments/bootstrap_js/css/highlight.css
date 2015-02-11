@@ -1,0 +1,29 @@
+body {
+    padding-top: 50px;
+    font: georgian;
+    font-size: 20px;
+    background: #edeee8;
+}
+
+center {
+    font-size: 25px;
+}
+
+input {
+    width: 200px;
+    height: 35px;
+    font-size: 22px;
+}
+
+p {
+    padding: 30px 70px 0px 70px;
+}
+
+.highlight {
+    padding: 1px 4px;
+    margin: -4px;
+    background-color: #ABF056;
+    -moz-border-radius: 5px; /* FF1+ */
+    -webkit-border-radius: 5px; /* Saf3-4 */
+    border-radius: 5px; /* Opera 10.5, IE 9, Saf5, Chrome */
+}

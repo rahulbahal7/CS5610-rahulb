@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../experiments/bootstrap_js/     What is Next?
+sliders.html												Javascript Animated Sliders
+fade.html													Fade In with jQuery
+search_text.html											Search Text
+bootstrap_drop_down.html									Bootstrap Drop Down
+bootstrap_template.html										Bootstrap Template

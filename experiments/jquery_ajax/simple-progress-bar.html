@@ -1,0 +1,39 @@
+<html>
+   <head>
+      <title>Progress Bar</title>
+      <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/plain-progress-bar.css">
+      <script type="text/javascript" src="js/simple-progress-bar.js"></script>
+   </head>
+   <body>
+   <p> This is a simple progress bar using JQuery UI</p>
+      <div id="progressbar"></div>
+   
+   <p>
+   CODE:<br><br>
+   var progressbar = $( "#progressbar" );<br>
+               $( "#progressbar" ).progressbar({<br>
+                  value: 25,<br>
+                  max:300<br>
+               });<br>
+            function progress() {<br>
+            var val = progressbar.progressbar( "value" ) || 0;<br>
+            progressbar.progressbar( "value", val + 1 );<br>
+            if ( val < 99 ) {<br>
+               setTimeout( progress, 100 );<br>
+            }<br>
+         }<br>
+         setTimeout( progress, 3000 );<br>
+      });<br>
+   </p>
+   <center>
+			<a href="../../fileview/Default.aspx?~/experiments/jquery_ajax/simple-progress-bar.html">View HTML</a> |
+			<a href="../../fileview/Default.aspx?~/experiments/jquery_ajax/css/plain-progress-bar.css">View CSS</a> | 
+			<a href="../../fileview/Default.aspx?~/experiments/jquery_ajax/js/simple-progress-bar.js">View JS</a> | 
+			<a href="http://jqueryui.com/progressbar/">Reference</a>
+			<br><br>
+	</center>
+   </body>
+</html>

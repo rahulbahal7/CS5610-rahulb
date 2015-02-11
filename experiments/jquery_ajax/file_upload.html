@@ -1,0 +1,38 @@
+<html>
+    <head>
+	<title> File Drag-Drop Upload</title>
+        <link rel="stylesheet" type="text/css" href="css/file_upload.css">
+		<script type="text/javascript" src="js/file_upload.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>            
+        </script>
+    </head>
+    <body>
+	<p> This experiment demonstrates the file uploading capability using Drag and Drop by using HTML5 and jQuery.</p>
+        <div id="dropzone">
+            Drop files here
+        </div>
+		<p>
+		CODE:<br><br>
+		$('#dropzone').on({<br>
+                    dragenter: function(e) {<br>
+                        $(this).css('background-color', 'lightBlue');<br>
+                    },<br>
+                    dragleave: function(e) {<br>
+                        $(this).css('background-color', 'white');<br>
+                    },<br>
+                    drop: function(e) {<br>
+                        e.stopPropagation();<br>
+                        e.preventDefault();<br>
+                        console.log(e.dataTransfer.files);<br>
+                    }<br>
+                });	<br>
+		</p>
+		 <center>
+			<a href="../../fileview/Default.aspx?~/experiments/jquery_ajax/file_upload.html">View HTML</a> |
+			<a href="../../fileview/Default.aspx?~/experiments/jquery_ajax/css/file_upload.css">View CSS</a> | 
+			<a href="../../fileview/Default.aspx?~/experiments/jquery_ajax/js/file_upload.js">View JS</a> | 
+			<a href="http://hayageek.com/drag-and-drop-file-upload-jquery/">Reference</a>
+			<br><br>
+		</center>
+    </body>
+</html>
