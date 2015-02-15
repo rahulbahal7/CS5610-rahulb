@@ -1,0 +1,108 @@
+<html>
+<head>
+    <title>In-place editing system using AJAX</title>
+    <link type="text/css" href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/editable_content.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+</head>
+<body>
+    <div id="container">
+        <h1>In-place editing</h1>
+        <p>Double click to edit the contents. Use the dynamically created links to save or discard the changes</p>
+        <div class="block">
+            <h2>EDITABLE COLUMN</h2>
+            <ul>
+                <li class="editable">Editable Comment 1</li>
+                <li class="editable">Editable Comment 2</li>
+                <li class="editable">Editable Comment 3</li>
+                <li class="editable">Editable Comment 4</li>
+                <li class="editable">Editable Comment 5</li>
+            </ul>
+        </div>
+        <div class="block">
+            <h2>HERE'S ANOTHER</h2>
+            <ul>
+                <li class="editable">Editable Comment 6</li>
+                <li class="editable">Editable Comment 7</li>
+                <li class="editable">Editable Comment 8</li>
+                <li class="editable">Editable Comment 9</li>
+                <li class="editable">Editable Comment 10</li>
+            </ul>
+        </div>
+        <div class="block">
+            <h2>YET ANOTHER</h2>
+            <ul>
+                <li class="editable">Editable Comment 11</li>
+                <li class="editable">Editable Comment 12</li>
+                <li class="editable">Editable Comment 13</li>
+                <li class="editable">Editable Comment 14</li>
+                <li class="editable">Editable Comment 15</li>
+            </ul>
+        </div>
+        <div class="block">
+            <h2>FOURTH ONE?</h2>
+            <ul>
+                <li class="editable">Editable Comment 16</li>
+                <li class="editable">Editable Comment 17</li>
+                <li class="editable">Editable Comment 18</li>
+                <li class="editable">Editable Comment 19</li>
+                <li class="editable">Editable Comment 20</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Working and Code</h2>
+        <p>
+            This experiment allows the user to edit the content on the page dynamically. When the user double clicks on an
+		editable content section, he can then modify the contents of the section. The user is then provided the options
+		to save/discard the changes.
+        </p>
+        <h3>Code</h3>
+        <p>
+            <code>$(".editable").bind("dblclick", replaceHTML);</code>
+        </p>
+        <p>
+            <code>newText = $(this).siblings("form").children(".editBox").val().replace(/"/g, "&quot;");</code>
+        </p>
+        <p>
+            <code>$(".btnDiscard").live("click", 
+					function()
+					{
+						$(this).parent()
+							   .html(oldText)
+							   .removeClass("noPad")
+							   .bind("dblclick", replaceHTML);
+					}
+					); </code>
+        </p>
+        <p>
+            <code>function replaceHTML()
+					{
+						oldText = $(this).html()
+										 .replace(/"/g, "&quot;");
+						$(this).addClass("noPad")
+							   .html("")
+							   .html(<form><input type=\"text\" class=\"editBox\" value=\"" + oldText + "\" /> </form><a href=\"#\" class=\"btnSave\">Save changes</a> <a href=\"#\" class=\"btnDiscard\">Discard changes</a>")
+							   .unbind('dblclick', replaceHTML);
+			
+					}</code>
+        </p>
+    </div>
+    <div class="container">
+        <hr />
+        <h4>Source Code</h4>
+        <a href="../../fileview/Default.aspx?~/experiments/ajax_angular/editable_content.html" target="_blank">HTML Source</a>
+        <br />
+        <a href="../../fileview/Default.aspx?~/experiments/ajax_angular/css/style.css" target="_blank">CSS Source</a>
+        <br />
+        <a href="../../fileview/Default.aspx?~/experiments/ajax_angular/js/editable_content.js" target="_blank">JS Source</a>
+        <hr />
+
+        <h4>References</h4>
+        <a href="https://angularjs.org/" target="_blank">Angular</a>
+    </div>
+</body>
+</html>

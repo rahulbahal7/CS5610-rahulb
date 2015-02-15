@@ -1,0 +1,91 @@
+<html>
+<head>
+    <title>Fetching data using Angular</title>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="css/data_angular.css" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js.map"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="js/data_angular.js"></script>
+
+</head>
+<body ng-app="MoviesDatabase">
+    <h1 class="heading">Fetching data using Angular</h1>
+    <div ng-controller="MoviesController" class="container">
+
+        <div class="input-group">
+            <input ng-model="searchByTitle" id="input" type="text" class="form-control" placeholder="Enter Movie Name">
+            <span class="input-group-btn">
+                <button ng-click="searchMovies()" id="search" class="btn btn-default" type="button">Go!</button>
+            </span>
+        </div>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th class="poster">Poster</th>
+                    <th class="title">Title</th>
+                    <th class="year">Year</th>
+                    <th class="rating">Rating</th>
+                    <th class="plot">Plot</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="movie in movies">
+                    <td>
+                        <img class="imgSize" ng-src="{{movie.urlPoster}}" /></td>
+                    <td>{{movie.title}}</td>
+                    <td>{{movie.year}}</td>
+                    <td>{{movie.rating}}</td>
+                    <td>{{movie.plot}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <article>
+            <div style="margin-top: 10px;">
+                <h4>Working and Code</h4>
+                <div>
+                    The data is fetched from the server and is pushed to the UI using Angular JS.
+                    Angular binds the controller defined in UI with the back-end and the changes are reflected at both sides.
+                </div>
+            </div>
+            <hr />
+            <h4>Code</h4>
+            <p>
+                $scope is used to access the elements in the UI and $http is used for making an http request. 
+				On success, response is fed into movies which is defined in the UI and data is filled dynamically.
+            </p>
+            <section>
+                <pre id="code" style="background-color: lightgray; width: 1200px; border: solid 1px black;">
+var app = angular.module("MoviesDatabase", []);
+app.controller("MoviesController",
+    function ($scope, $http) {
+        $scope.searchMovies = function () {
+            $http.jsonp("url_of_api").success(function (response) {
+                $scope.movies = response;
+            });
+        };
+    });
+                 </pre>
+            </section>
+        </article>
+
+        <br style="clear: both" />
+        <footer>
+            <hr />
+            <h4>Source Code</h4>
+            <a href="../../fileview/Default.aspx?~/experiments/ajax_angular/data_angular.html" target="_blank">HTML Source</a>
+            <br />
+            <a href="../../fileview/Default.aspx?~/experiments/ajax_angular/css/data_angular.css" target="_blank">CSS Source</a>
+            <br />
+            <a href="../../fileview/Default.aspx?~/experiments/ajax_angular/js/data_angular.js" target="_blank">JS Source</a>
+            <hr />
+
+            <h4>References</h4>
+            <a href="https://angularjs.org/" target="_blank">Angular</a>
+        </footer>
+        <br />
+    </div>
+</body>
+</html>
