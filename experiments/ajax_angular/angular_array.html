@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title>Angular Arrays</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript" src="js/angular_array.js"></script>
+</head>
+<body style="padding:50px;">
+<h1><center>Angular Arrays</center></h1>
+<div class="container" ng-app="arrayController">
+ <div ng-controller="arrayController">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>City</th>
+                <th>Country</th>
+                <th>Temperature</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="city in cities | orderBy:'name'">
+                <td>{{city.name}}</td>
+                <td>{{city.country}}</td>
+                <td>{{city.temperature}}</td>
+            </tr>
+        </tbody>
+        <tfoot><h1><b>Weather</b></h1></tfoot>
+    </table>
+ </div>
+</div>
+<hr />
+
+
+<div class="explain">
+ <p>
+    This experiment describes the use of arrays using AngularJS. 
+ <p>
+        <pre style="margin:0px 30px;">
+    var boston = {
+        name: "Boston",
+        country: "USA",
+        temperature: "20",
+    };
+     var san_diego = {
+        name: "San Diego",
+        country: "USA",
+        temperature: "60",
+    };
+        </pre>
+  <p>
+      The above objects are then rendered on the page. This experiment can be used in scenarious where multiple
+	  values are required to be manipulated and handled. 
+  </p>
+        <pre style="margin:0px 30px;">
+            var cities = [boston, san_diego];
+        </pre>
+        <p>
+            "ng-repeat" is used to iterate through the array.
+        </p>
+        <pre ng-non-bindable style="margin:0px 30px;">
+           &lt;tbody&gt;
+              &lt;tr ng-repeat=&quot;city in cities | orderBy:&apos;city&apos;&quot;&gt;
+                &lt;td&gt;{{city.name}}&lt;/td&gt;
+                &lt;td&gt;{{city.country}}&lt;/td&gt;
+                &lt;td&gt;{{city.temperature}}&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/tbody&gt;
+        </pre>
+    </div>
+    <hr/>
+	<center>
+	<h3>Source</h3>
+   <a href="../../fileview/Default.aspx?~/experiments/ajax_angular/angular_array.html" target="_blank">Html</a><br />
+   <a href="../../fileview/Default.aspx?~/experiments/ajax_angular/js/angular_array.js" target="_blank">JS</a><br />
+  <h3>Reference</h3>
+    <a href="http://www.angularjs.org" target="_blank">Angular</a><br />
+	</center>
+	</body>
+</html>

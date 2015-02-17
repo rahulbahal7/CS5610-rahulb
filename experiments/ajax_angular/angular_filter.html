@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>AngularJS Filter</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+        <script src="js/angular_filter.js"></script>
+    </head>
+<body ng-app="app1">
+    <div class="container">
+    <h1><center>AngularJS Filter</center></h1><br>
+    <p>
+        This experiment is used to filter the contents on the page using AngularJS.
+    </p>
+  <div ng-controller="ctrl1">
+    <form class="form-inline">
+      <input ng-model="query" type="text" placeholder="Enter name or price">
+    </form>
+
+      <table class="table table-striped">
+          <thead>
+              <tr>
+                 <th>name</th>
+                <th>Price</th> 
+              </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="book in books | filter:query | orderBy: 'name'">
+              <td>{{book.name}}</td>
+              <td>{{book.price}}</td>
+          </tr>
+              </tbody>
+      </table>
+    
+  </div>
+    <h3>Code</h3>
+    <pre>
+        $scope.filterFunction = function (element) {
+        return element.name.match(/^Ma/) ? true : false;
+        };
+    </pre>
+        <pre>
+        &lt;tr ng-repeat="book in books | filter:query | orderBy: 'name'"&gt;
+              &lt;td&gt;scope variable&lt;/td&gt;
+              &lt;td&gt;scope variable&lt;/td&gt;
+        &lt;/tr&gt;
+            </pre>
+    <h4>Description</h4>
+        <p>
+            The controller calls the filter function with an element. If the element's name matches with input then that element is displayed.
+        </p>
+        </div>
+		<footer>
+        <hr />
+		<center>
+        <h4>Source</h4>
+        <a href="../../fileview/Default.aspx?~/experiments/ajax_angular/angular_filter.html" target="_blank">HTML</a>
+        <br />
+        <a href="../../fileview/Default.aspx?~/experiments/ajax_angular/js/angular_filter.js" target="_blank">JS</a>
+        <br />
+        <h4>Reference</h4>
+        <a href="https://angularjs.org/" target="_blank">Angular</a>
+		</center>
+    </footer>
+</body>
+
+    </html>
