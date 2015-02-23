@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Parameters Routing Using Angular</title>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body ng-app="sampleApp">
+
+    <div class="container">
+        <center><h2>Parameter Routing using Angular JS</h2></center>
+        <div class="row">
+
+            <div class="col-md-9">
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Song</th>
+                            <th>Artist</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Dead Memories</td>
+                            <td>Slipknot</td>
+                            <td><a href="#DispSong/Dead_Memories">show details</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Blackwater Park</td>
+                            <td>Opeth</td>
+                            <td><a href="#DispSong/Blackwater_Park">show details</a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Trains</td>
+                            <td>Porcupine Tree</td>
+                            <td><a href="#DispSong/Trains">show details</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <div ng-view></div>
+
+            </div>
+
+        </div>
+        <div class="maindiv" align="left">
+            <h4>Code</h4>
+            <hr />
+            <h5>The following code in the controller takes an input variable form the HTML page (songID)
+                and we can control the variable using "$scope" of the Angular App. This way we can route 
+                information using variables in AngularJS.
+            </h5>
+            <code>sampleApp.config(['$routeProvider',<br />
+                function($routeProvider) {<br />
+                $routeProvider.<br />
+                when('/DispSong/:songId', {<br />
+                templateUrl: 'pages/show_song.html',<br />
+                controller: 'SongController'<br />
+                });<br />
+                }]);<br />
+            </code>
+        </div>
+        <br />
+        <h5>And then passing the parameter to the View as shown below: </h5>
+        <code>$scope.song_id = $routeParams.songId;
+        </code>
+    </div>
+    </div><!-- /.container -->
+    <div class="container">
+        <hr />
+        <h4>Source</h4>
+        <a href="../../fileview/Default.aspx?~/experiments/angular_routing/params_routing.html" target="_blank">HTML</a>
+        <br />
+        <a href="../../fileview/Default.aspx?~/experiments/angular_routing/js/params_routing.js" target="_blank">JS Source</a>
+        <hr />
+
+        <h4>References</h4>
+        <a href="https://angularjs.org/" target="_blank">Angular</a>
+    </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="js/params_routing.js"></script>
+
+</body>
+</html>

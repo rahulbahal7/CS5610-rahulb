@@ -2,4 +2,5 @@
 ../story/index.htm?../experiments/html_css/story.txt		WEEK 1,2 - HTML and CSS
 ../story/index.htm?../experiments/bootstrap_js/story.txt	Week 3 - Bootstrap and Javascript
 ../story/index.htm?../experiments/jquery_ajax/story.txt		Week 4 - JQuery and Ajax
-../story/index.htm?../experiments/ajax_angular/story.txt	Week 5 - Ajax and AngularJS
+../story/index.htm?../experiments/ajax_angular/story.txt	Week 5 - Ajax, AngularJS
+../story/index.htm?../experiments/angular_routing/story.txt	Week 6 - State and Routing using AngularJS

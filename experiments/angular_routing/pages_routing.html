@@ -1,0 +1,67 @@
+<html>
+<head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="js/pages_routing.js"></script>
+</head>
+
+<body ng-app="demoApp" ng-controller="mainController">
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Angular Routing</a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+                <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+    <div id="main">
+        <div ng-view></div>
+    </div>
+    <div class="maindiv">
+            <h4>Code</h4>
+        The followig code demonstrates how different views can be loaded in the same page by binding and invoking them using
+        their respective controllers:
+            <pre>
+    pageApp.config(function ($routeProvider) {
+    $routeProvider        
+        .when('/', {
+            templateUrl: 'pages/home.html',
+            controller: 'mainController'
+        })
+        .when('/about', {
+            templateUrl: 'pages/about.html',
+            controller: 'aboutController'
+        })
+        .when('/contact', {
+            templateUrl: 'pages/contact.html',
+            controller: 'contactController'
+        });
+});                      
+        </pre>
+        </div>
+        <hr />
+        <div class="maindiv">
+            <h4>Explanation</h4>
+            <p>
+                The AngularJS Routing is a powerful technique that can be used to implement a MVC like behaviour in web applications. 
+                The view can be loaded in a page using AngularJS Controllers and Views.
+            </p>
+            <hr />
+            <h4>Source</h4>
+            <a href="../../fileview/Default.aspx?~/Experiments/angular_routing/pages_routing.html" target="_blank">HTML Source</a>
+            <a href="../../fileview/Default.aspx?~/Experiments/angular_routing/js/pages_routing.js" target="_blank">JS Source</a>
+            <hr />
+            <h4>Refrences</h4>
+            <a href="https://angularjs.org/" target="_blank">Angular</a>
+            <hr />
+        </div>
+    </div></body>
+</html>

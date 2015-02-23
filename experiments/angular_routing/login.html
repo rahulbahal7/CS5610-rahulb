@@ -1,0 +1,120 @@
+﻿<html>
+<head>
+    <title>LogIn using AngularJS Routing</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/login.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <title>Angular Routing</title>
+</head>
+
+<body style="padding-top: 50px" ng-app="demoApp">
+    <div class="container">
+        <header>
+            <h1 class="text-center">LogIn using Angular Routing.</h1>
+        </header>
+        <article>
+            <div class="maindiv text-center">
+                <div class="div-header">
+                    <h3>
+                        <center>LogIn functionality using AngularJS.</center>
+                    </h3>
+                </div>
+                <p>
+                    <h4>username: "user1", password: "pass1" </h4>
+                    <h4>username: "user2", password: "pass2" </h4>
+                    <h4>username: "user3", password: "pass3" </h4>
+                    When the user logs in, he will be able to view his/her profile.
+                </p>
+                <hr />
+            </div>
+        </article>
+        <div>
+            <nav ng-controller="NavController" class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Project name</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#/home">Home</a></li>
+                            <li><a href="#/about">About</a></li>
+                            <li><a href="#/contact">Contact</a></li>
+                            <li ng-show="currentUser"><a href="#/profile/{{currentUser.username}}">Profile</a></li>
+                        </ul>
+                        <form class="navbar-form navbar-right" ng-show="!currentUser">
+                            <div class="form-group">
+                                <input type="text" ng-model="username" placeholder="Username" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" ng-model="password" placeholder="Password" class="form-control">
+                            </div>
+                            <button ng-click="login()" class="btn btn-success">Sign In</button>
+
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div ng-view>
+        </div>
+        <hr />
+        <div class="maindiv">
+            <h4>Code</h4>
+            <hr />
+            <pre>
+    app.factory("UserService", function () {
+    var currentuser = null;
+    var users = [
+        { username: "user1", password: "pass1" },
+        { username: "user2", password: "pass2"},
+        {username: "user3", password: "pass3"}
+    ]
+    var login = function(username,password){
+        for(var u in users)
+        {
+            if(users[u].username == username)
+            {
+                currentuser = users[u];
+                return users[u];
+            }
+        }
+        return null;
+    };
+    var getCurrentuser = function () {
+        return currentuser;
+    }
+    return {
+        login: login,
+        getCurrentuser: getCurrentuser
+    }
+});                         
+        </pre>
+        </div>
+        <hr />
+        <div class="maindiv">
+            <h4>Explanation</h4>
+            <p>
+                The functionality related to a user is present in the UserService. The entered credentials will be passed to user 
+                service, and on success the user will be logged in. 
+                On successful login, the login form will be hidden and Profile button will be displayed.
+            </p>
+            <hr />
+            <h4>Source</h4>
+            <a href="../../fileview/Default.aspx?~/Experiments/angular_routing/login.html" target="_blank">HTML Source</a>
+            <a href="../../fileview/Default.aspx?~/Experiments/angular_routing/js/login.js" target="_blank">JS Source</a>
+            <hr />
+            <h4>Refrences</h4>
+            <a href="https://angularjs.org/" target="_blank">Angular</a>
+            <hr />
+        </div>
+    </div>
+</body>
+</html>

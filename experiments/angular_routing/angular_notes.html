@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>State using AngularJS</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <link rel="stylesheet" href="../frameworks/bootstrap-3.3.2-dist/css/bootstrap.css">
+    <script type="text/javascript" src="js/angular_notes.js"></script>
+</head>
+<body ng-app="noteApp" ng-controller="noteController">
+    <div class="container">
+        <center><h2>State using Angular JS</h2>
+        <h4>
+            Note
+        </h4>
+            </center>
+        <textarea class="form-control" ng-model="message" cols="40" rows="10"></textarea>
+        <p>
+            <div class="form-group" align="right">
+                <button ng-click="save()" class="btn btn-primary">Save</button>
+                <button ng-click="clear()" class="btn btn-default">Clear</button>
+        </p>
+        <p>Number of characters left: <span ng-bind="left()"></span></p>
+    </div>
+    <div class="maindiv" align="left">
+        <h4>Code</h4>
+        <hr />
+        <code>var app = angular.module("noteApp", []);
+            app.controller("noteController", function($scope) {<br />
+            $scope.message = "";<br />
+            $scope.left  = function() {return 140 - $scope.message.length;};<br />
+            $scope.clear = function() {$scope.message = "";};<br />
+            $scope.save  = function() {alert("Note Saved : "+$scope.message);};<br />
+            });<br />
+        </code>
+    </div>
+    <br />
+    <div class="maindiv" align="left">
+        <h4>Explaination</h4>
+        <hr />
+        <pre>
+            This experiment is to use the state saving ability using AngularJS. The<br />
+            - ng-click="save()" 
+            can be used to check the current state of the number of characters in the Text Box.
+
+            - ng-click="clear()"
+            can be used to reset the state of the Text Box.
+            </pre>
+    </div>
+    <div class="container">
+        <hr />
+        <h4>Source</h4>
+        <a href="../../fileview/Default.aspx?~/experiments/angular_routing/angular_notes.html" target="_blank">HTML</a>
+        <br />
+        <a href="../../fileview/Default.aspx?~/experiments/angular_routing/js/angular_notes.js" target="_blank">JS Source</a>
+        <hr />
+
+        <h4>References</h4>
+        <a href="https://angularjs.org/" target="_blank">Angular</a>
+    </div>
+    </div>
+</body>
+</html>
