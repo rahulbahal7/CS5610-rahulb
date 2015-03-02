@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>Deleting an item</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+	<h1>Deleting an Item</h1><hr/>
+        <h4>Click <a href="http://rcs-rbahal.rhcloud.com" target="_blank">here</a> to see the output.</h4>
+        <hr />
+        <h3>About Experiment</h3>
+        <p>
+            Let's put the object to some real tests now. In this experiment we will delete an item (a File in our case).
+            <br>
+            We will first iterate through the items in the array and display them in an array on the client side. Next, a 
+            delete button is displayed next to the File object which (of course) will remove that object from the page if the
+            user clicks on it.
+            <br>
+            Now, to do that we first create a function on the client side to handle the delete event. This takes the index of
+            the object to be removed.<br><br>
+            <code>
+                $scope.remove = function(index){<br>
+                        $http.delete("/file/"+index)<br>
+                        .success(function(res){<br>
+                            $scope.files = res;<br>
+                        });<br>
+                    };<br>
+            </code>
+        </p>
+        <br>
+        <div>
+            Now that we fetched the ID from the client side, we can fire the delete on the server's side to complete the operation.<br><br>
+            <code>
+            // Remove a file<br>
+            app.delete("/file/:id", function(req,res){<br>
+                var index = req.params.id;<br>
+                files.splice(index, 1);<br>
+                res.json(files);<br>
+            });<br>
+            </code>
+            <hr />
+        </div>
+        <h4>Source</h4>
+        <a href="../../fileview/Default.aspx?~/Experiments/node_openshift/delete.html" target="_blank">HTML</a>
+        <hr />
+        <h3>References</h3>
+        <a href="https://www.youtube.com/watch?v=Lnd_uSEpCdo">Prof. Jose's Youtube Channel</a><br /> 
+    </div>
+</div>
+</body>
+</html>

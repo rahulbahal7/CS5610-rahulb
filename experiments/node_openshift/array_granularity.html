@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title>Granularity in Array of Objects</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+	<h1>Granularity in Array of Objects</h1><hr/>
+        <h4>Click <a href="http://rcs-rbahal.rhcloud.com/file/0" target="_blank">here</a> to see a file object</h4>
+        <h4>Click <a href="http://rcs-rbahal.rhcloud.com/file/0/detail/1" target="_blank">here</a> to see a particular detail of the file object (file-extension)</h4>
+        <hr />
+        <h3>About Experiment</h3>
+        <p>
+            This experiment will demonstrate the Granularity in Arrays. We will be using the same array object discussed in
+            the previous experiment. However, we will target a porticular object in the JSON. This is possible using the URL mapping: <code>/file/:index</code> , i.e, using file and then the index of the file object.
+            <br>
+            Next, we demonstrate a more in depth granular control of the file object seen above. We will see the "extension" of the file object by extracting it from it's details. This can be done using: <code>/file/:index/detail/:detailIndex</code>
+        </p>For this experiment, consider the following example array of objects (JSON):<br>
+        <br>
+        <div>
+            <code>
+            // Return a particular index (as a param) from an arary as JSON<br><br>
+
+            app.get("/file/:index", function(req,res){<br>
+                var file_index = req.params.index; //or req.params['index'];<br>
+                res.json(files[file_index]);<br>
+            });<br>
+            <br>
+            // Return details corresponding to a particular index for a file<br><br>
+
+            app.get("/file/:index/detail/:detailIndex", function(req,res){<br>
+                var file_index = req.params.index; //or req.params['index'];<br>
+                var detail_index = req.params.detailIndex; <br>
+                res.json(files[file_index].details[detail_index]);<br>
+            }); <br>
+            </code>
+            <hr />
+        </div>
+        <h4>Source</h4>
+        <a href="../../fileview/Default.aspx?~/Experiments/node_openshift/display_array.html" target="_blank">HTML</a>
+        <hr />
+        <h3>References</h3>
+        <a href="https://www.youtube.com/watch?v=Lnd_uSEpCdo">Prof. Jose's Youtube Channel</a><br /> 
+    </div>
+</div>
+</body>
+</html>

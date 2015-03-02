@@ -1,0 +1,8 @@
+﻿../../story/whatisnext.htm?../experiments/ajax_angular/      What is Next?
+node_openshift_hello.html								Test for NodeJS and OpenShift setup
+display_array.html										Display Array of Objects	
+array_granularity.html									Granularity in Array Objects
+delete.html												Deleting an Object
+add.html												Adding an Object
+modify.html												Modifying an Object
+

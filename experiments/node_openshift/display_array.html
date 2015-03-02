@@ -1,0 +1,48 @@
+<<html>
+<head>
+	<title>Displaying an Array</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+	<h1>Displaying an Array of Objects</h1><hr/>
+        <h4>Click <a href="http://rcs-rbahal.rhcloud.com/file" target="_blank">here</a> to see the output</h4>
+        <hr />
+        <h3>About Experiment</h3>
+        <p>
+            This experiment displays the handling of a JSON array using NODEJS.
+        </p>For this experiment, consider the following example array of objects (JSON):<br>
+        <br>
+        <div>
+            <code>
+            var files = [<br>
+                {fileName: "File1", fileSize:"200KB", details:[<br>
+                    {type: "javascript"}, <br>
+                    {extension: "js"},<br>
+                    {lines: 80}<br>
+                ]},<br>
+                {fileName: "File2", fileSize:"300KB", details:[]},<br>
+                {fileName: "File3", fileSize:"400KB", details:[]},<br>
+                {fileName: "File4", fileSize:"500KB", details:[]},<br>
+            ];</code>
+            <br>
+            <br>
+            We can then map this array of objects to a URL and return as a string using a JSON object. 
+            <br><br>
+            <code>
+              //Map an array of files to URL as a String and return it as a JSON object<br>
+              app.get("/file", function(req,res){<br>
+                  res.json(files);<br>
+              });<br>
+            </code>
+            <hr />
+        </div>
+        <h4>Source</h4>
+        <a href="../../fileview/Default.aspx?~/Experiments/node_openshift/display_array.html" target="_blank">HTML</a>
+        <hr />
+        <h3>References</h3>
+        <a href="https://www.youtube.com/watch?v=Lnd_uSEpCdo">Prof. Jose's Youtube Channel</a><br /> 
+    </div>
+</div>
+</body>
+</html>

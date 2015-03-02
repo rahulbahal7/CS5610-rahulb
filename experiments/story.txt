@@ -4,3 +4,4 @@
 ../story/index.htm?../experiments/jquery_ajax/story.txt		Week 4 - JQuery and Ajax
 ../story/index.htm?../experiments/ajax_angular/story.txt	Week 5 - Ajax, AngularJS
 ../story/index.htm?../experiments/angular_routing/story.txt	Week 6 - State and Routing using AngularJS
+../story/index.htm?../experiments/node_openshift/story.txt	Week 7 - NodeJS and OpenShift

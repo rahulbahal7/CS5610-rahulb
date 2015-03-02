@@ -1,0 +1,54 @@
+<html>
+<head>
+	<title>Modifying an Item</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+	<h1>Modifying an Item</h1><hr/>
+        <h4>Click <a href="http://rcs-rbahal.rhcloud.com" target="_blank">here</a> to see the output.</h4>
+        <hr />
+        <h3>About Experiment</h3>
+        <p>
+            We need to modify the entries of the objects. This experiment is therefore used to demonstrate how to modify an item that is currently displayed on the screen.
+            <br>
+            When the user clicks on the modify button next to the item, the contents of that object are copied into the form at the top of the page so that the user can make changes.
+            <br>
+            When the user has made changes, he can click on the check button to record those changes on the page. This will execute the following function on the client side(Note that the binding is by reference):<br><br>
+            <code>
+                $scope.selectedIndex = null;<br>
+                <br>
+                $scope.select = function(index){<br>
+                    $scope.selectedIndex = index;<br>
+                    $scope.file = $scope.files[index]; //copy by reference<br>
+                }<br>
+                <br>
+                $scope.update = function(file){<br>
+                    $http.put("/file/"+ $scope.selectedIndex, file)<br>
+                    .success(function(res){<br>
+                    $scope.files = res;<br>
+                    })<br>
+                }<br>
+            </code>
+        </p>
+        <br>
+        <div>
+            To save the changes, a put request is sent to the server so that the changes can be reflected to the current object.<br><br>
+            <code>
+            // Input a file<br><br>
+            app.put("/file/:id", function(req,res){<br>
+                files[req.params.id] = req.body;<br>
+                res.json(files);<br>
+            });<br>
+            </code>
+            <hr />
+        </div>
+        <h4>Source</h4>
+        <a href="../../fileview/Default.aspx?~/Experiments/node_openshift/modify.html" target="_blank">HTML</a>
+        <hr />
+        <h3>References</h3>
+        <a href="https://www.youtube.com/watch?v=Lnd_uSEpCdo">Prof. Jose's Youtube Channel</a><br /> 
+    </div>
+</div>
+</body>
+</html>
