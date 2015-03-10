@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>MongoDB and Mongoose - Retrieve and Order</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+	<h1>MongoDB and Mongoose - Retrieve and Order</h1><hr/>
+        <hr />
+        <h3>About Experiment</h3>
+        <p>
+			While performing retrieval operations from the database, we often need to display data in some order.
+			In this experiment, we will target this scenario in particular.
+			<br>
+			We will retrieve all the data from the database and will order the files based on a particular property. 
+			Here, we choose the property: file-size and will display the data in decreasing order of this property.
+			<br><br>
+			<code>
+				ng-repeat="file in files | orderBy:'size':true "
+				
+			</code>
+		</p>	<br>
+		<img src = "images/exp_3.png" width = auto></img><br>
+		
+        <hr />
+        <h4>Source</h4>
+        <a href="../../fileview/Default.aspx?~/Experiments/node_openshift/exp3.html" target="_blank">HTML</a>
+        
+        <h3>References</h3>
+        <a href="https://www.youtube.com/watch?v=YH5sFprHgl0">Prof. Jose's Youtube Channel</a><br /> 
+    </div>
+</body>
+</html>

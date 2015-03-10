@@ -1,0 +1,72 @@
+<html>
+<head>
+	<title>MongoDB and Mongoose - Retrieving Data</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+	<h1>MongoDB and Mongoose - Retrieving Data</h1><hr/>
+        <hr />
+        <h3>About Experiment</h3>
+        <p>
+			Since we want out application to be able to perform the database operations. We introduce Mongoose for the 
+			connectivity and handling of the application to the database.
+			To do this, we first include Mongoose in our server side code:
+			<code>
+			var mongoose = require('mongoose');
+            <br>
+			</code>
+			</p>
+		<p>	
+		Before we can interact with the database, we need the schema and model.
+		<h4>Schema</h4>
+		<code>
+		var FileSchema = new mongoose.Schema({<br>
+		name: String,<br>
+		size: Number,<br>
+		info: [FileDetailSchema]<br>
+		}, {collection: 'file'});<br>
+		</code>
+		<h4>Model</h4>
+		<code>
+		var FileModel = mongoose.model('FileModel', FileSchema);<br>
+		</code>
+		
+		</p>	
+		<p>
+        Now, we are ready to make changes to the database through our code.	In order to connect to the database, 
+		we require <code>connect()</code>.
+		</p>
+		<p>
+		We can retrieve all the data(as seen in previous experiment) and also a particular data using <code>findByID()</code>
+		<br>
+		<code>
+		app.get("/file/:index", function(req,res){<br>
+		FileModel.findById(req.params.index, function(err, doc){<br>
+			res.json(doc);<br>
+			});<br>
+		});	<br>
+		</code><br>
+		<img src = "images/exp_2.png"></img><br>
+		
+		Similarly, we can target data in the retrieved information in more granular fashion.
+		</p>
+		<p>		
+		We can also update the data belonging to a particular ID:<br>
+		<code>
+		FileModel.findById("54fcfe667c0726381d99e8e3", function (err, data){<br>
+		data.name = "File123";<br>
+		data.save();<br>
+		});<br>
+		</code>
+		</p>
+        <hr />
+        <h4>Source</h4>
+        <a href="../../fileview/Default.aspx?~/Experiments/node_openshift/exp2.html" target="_blank">HTML</a>
+        
+        <h3>References</h3>
+        <a href="https://www.youtube.com/watch?v=YH5sFprHgl0">Prof. Jose's Youtube Channel</a><br /> 
+    </div>
+</div>
+</body>
+</html>

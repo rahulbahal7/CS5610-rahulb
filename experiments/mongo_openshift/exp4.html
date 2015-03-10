@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>MongoDB and Mongoose - Add</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+	<h1>MongoDB and Mongoose - Add</h1><hr/>
+        <hr />
+        <h3>About Experiment</h3>
+        <p>
+			In this experiment, we will add some information to the database.
+			<br>
+			We will take two inputs from the user: FileName and FileSize from the user and add that information to the
+			database. 
+			<br>
+			Firstly we create an instance of the Database model. We then pass the information from the body of the page and
+			add it to the database using <code>save()</code>. 
+			<br>
+			Next, to display the updated information, we include the <code>find()</code> after saving it and return the response to the
+			client. This is done right after inserting the record in order to avoid the Race condition.
+			<br><br>
+			<code>
+				app.post("/file", function(req,res){<br>
+					//Creating an instance of the model<br>
+					var file = new FileModel(req.body);<br>
+					file.save(function(err, doc){<br>
+					FileModel.find(function(err, data){<br>
+					res.json(data);<br>
+					});<br>
+				});  <br>
+				});<br><br>
+				
+			</code>
+		</p>
+		<h4>OUTPUT</h4><br>
+		Click <a href="http://rcs-rbahal.rhcloud.com/">here</a> to see the output.
+        <hr />
+        <h4>Source</h4>
+        <a href="../../fileview/Default.aspx?~/Experiments/node_openshift/exp4.html" target="_blank">HTML</a>
+        
+        <h3>References</h3>
+        <a href="https://www.youtube.com/watch?v=YH5sFprHgl0">Prof. Jose's Youtube Channel</a><br /> 
+    </div>
+</body>
+</html>
