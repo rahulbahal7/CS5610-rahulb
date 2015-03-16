@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>MongoDB and Mongoose - Delete</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+	<h1>MongoDB and Mongoose - Delete</h1><hr/>
+        <hr />
+        <h3>About Experiment</h3>
+        <p>
+			In this experiment, we will delete the information from the database.
+			<br>
+			The user will click on the remove button and we will remove the record from the UI and the database.
+			<br>
+			When the user clicks on a particular record, we capture it's ID and then perform a lookup in the database
+			using <code>findById()</code>. On finding a match, we remove that entry from the database and display the remaining 
+			information. As seen in last experiment, this is done right after deleting the record in order to avoid the Race condition.
+			<br><br>
+			<code>
+				app.delete("/file/:id", function(req,res){<br>
+				FileModel.findById(req.params.id, function(err, count){<br>
+				count.remove();<br>
+				FileModel.find(function(err, data){<br>
+				res.json(data);<br>
+				});<br>
+				});<br>
+			});<br><br>
+				
+			</code>
+		</p>
+		<h4>OUTPUT</h4><br>
+		Click <a href="http://rcs-rbahal.rhcloud.com/">here</a> to see the output.
+        <hr />
+        <h4>Source</h4>
+        <a href="../../fileview/Default.aspx?~/Experiments/mongo_openshift/exp5.html" target="_blank">HTML</a>
+        
+        <h3>References</h3>
+        <a href="https://www.youtube.com/watch?v=YH5sFprHgl0">Prof. Jose's Youtube Channel</a><br /> 
+    </div>
+</body>
+</html>
