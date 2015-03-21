@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>Validating User From Database</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+	<h1>Validating User From Database</h1><hr/>
+         <h4>To see the validation of users from a database, register a user 
+            <a href="http://auth-rbahal.rhcloud.com/#/register" target="_blank">here</a>
+        click on "Logout" and then Login using the newly registered user.</h4>
+        <hr />
+        <h3>About Experiment</h3>
+        <p>
+            This experiment will show the validation of a user using a database. The database(MongoDB) will be connected to using Mongoose and 
+            the authentication will be intercepted using Passport
+            <br>
+            The schema and model are first defined. "UserModel" is then used to find the user with the provided username and password from the 
+            database. <br />
+            If there is a match the user object corresponding to that user is sent back as the response. Otherwise invalid authorization(401) is
+            returned and the user stays on the Login screen.
+            <br>
+            <h3>CODE</h3>
+            <code>
+                // Passporth Authentication with LocalStrategy<br>
+                passport.use(new LocalStrategy(function (username, password, done){<br>
+                    UserModel.findOne({username: username, password: password}, function(err, user){<br>
+    	                if(user){<br>
+    		                return done(null, user)<br>
+    	                }<br>
+    	                // Invalid Auth. with an Error message - ("null" indicates the error)<br>
+    	                return done(null, false, {message: 'Unable to login'});<br>
+                    });<br>
+                }));<br>
+            </code>
+            
+        <h4>Source</h4>
+        <a href="../../fileview/Default.aspx?~/Experiments/authorization-passportjs/validate-user-from-db.html" target="_blank">HTML</a>
+        <a href="../../fileview/Default.aspx?~/Experiments/authorization-passportjs/server04.js" target="_blank">SERVER</a>
+        <hr />
+        <h3>References</h3>
+        <a href="https://www.youtube.com/watch?v=8GL5WpQ0vfo">Prof. Jose's Youtube Channel</a><br /> 
+    </div>
+</div>
+</body>
+</html>

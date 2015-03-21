@@ -1,0 +1,66 @@
+<html>
+<head>
+	<title>Register New User</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+	<h1>Register New User</h1><hr/>
+         <h4>To register a user click
+            <a href="http://auth-rbahal.rhcloud.com/#/register" target="_blank">here</a></h4>
+        <hr />
+        <h3>About Experiment</h3>
+        <p>
+            This experiment will show the registration of a user. The user will enter the required information and the details will be 
+            entered in the database(MongoDB).
+            <br>
+            The schema and model are first defined. "UserModel" is then used to save the user in the database. 
+            <br />
+            If the user is saved successfully, the user is then logged in automatically as well. The server side code that handles this behaviour is:
+            <br>
+            <h3>CODE</h3>
+            <code>
+            //Register User<br>
+            app.post("/register", function(req, res){<br>
+	            var newUser = new UserModel(req.body);<br>
+	            newUser.repositories = ['demoRepo'];<br>
+	            newUser.save(function(err, user){<br>
+		            //Login the user as it's valid now<br>
+		            req.login(user, function(err){<br>
+			            if(err){return next(err);}<br>
+			            res.json(user);<br>
+		            });<br>
+	            });<br>
+            });<br>
+            </code>
+            <br />
+            On the client side, before the user can be registered, we first check if the passwords entered by the user on the front end match. If 
+            they do, then we post the information to the server and upon success, we redirect the user to his profile where he will be able to view 
+            his information. The code that handles this on the client side is:
+            <code>
+                app.controller("RegisterController", function($scope, $http, $location, $rootScope){<br>
+	            $scope.register = function(user){<br>
+		            console.log(user);<br><br>
+		            if(user.password == user.password2){<br>
+		            $http.post("/register", user)<br>
+		            .success (function(res){<br>
+			            console.log(res);<br><br>
+
+			            //make the user the current user and pass to profile<br>
+			            $rootScope.currentUser = res;<br>
+			            $location.url("/profile");<br>
+		            });<br>
+	            }<br>
+	            }<br>
+            });<br>
+            </code>
+        </p>
+        <h4>Source</h4>
+        <a href="../../fileview/Default.aspx?~/Experiments/authorization-passportjs/register-user.html" target="_blank">HTML</a>
+        <a href="../../fileview/Default.aspx?~/Experiments/authorization-passportjs/server.js" target="_blank">SERVER</a>
+        <hr />
+        <h3>References</h3>
+        <a href="https://www.youtube.com/watch?v=8GL5WpQ0vfo">Prof. Jose's Youtube Channel</a><br /> 
+    </div
+</body>
+</html>

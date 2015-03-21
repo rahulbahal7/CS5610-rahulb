@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title>Redirect After Logout</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+	<h1>Redirect After Logout</h1><hr/>
+        <h4>Click <a href="http://auth-rbahal.rhcloud.com/#/home" target="_blank">here</a> to login with username and password
+             and then "Logout"</h4>
+        <hr />
+        <h3>About Experiment</h3>
+        <p>
+            This experiment will demonstrate the "logout" behaviour of the application when the user clicks on "Logout".
+            <br>
+            The user's set cookie will be destroyed and the user will be redirected to the "Home" page. The following code 
+            terminates the user's active session and destroys the cookie.
+            <br>
+            <h3>CODE</h3>
+            <code>
+                //Logout the user
+                app.post("/logout", function(req, res){<br>
+	                req.logout();<br>
+	                res.send(200); //Return Success<br>
+                });<br>
+            </code>
+            <br />
+            On the client side, the redirection is handled so that the user is navigated back to the Home page after Logging out of the 
+            application.<br />
+            Client Side Code:<br />
+            <code>
+                app.controller("NavCtrl", function($scope, $http, $location){<br>
+	            //Logout and make the currently set cookie invalid and redirect to Home<br>
+	            $scope.logout = function(){<br>
+		            $http.post("/logout")<br>
+		              .success(function(){<br>
+			             $location.url("/home");<br>
+		                });<br>
+	                };<br>
+                });<br>
+            </code><br>
+        </p>
+        <br>
+        <h4>Source</h4>
+        <a href="../../fileview/Default.aspx?~/Experiments/authorization-passportjs/redirect-after-logout.html" target="_blank">HTML</a>
+        <a href="../../fileview/Default.aspx?~/Experiments/authorization-passportjs/server03.js" target="_blank">SERVER</a>
+        <hr />
+        <h3>References</h3>
+        <a href="https://www.youtube.com/watch?v=dXkqNWLyJ7E">Prof. Jose's Youtube Channel</a><br /> 
+    </div>
+</body>
+</html>

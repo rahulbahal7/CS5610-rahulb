@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>Passport Auth</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+	<h1>Authorization using PassportJS</h1><hr/>
+        <h4>Firstly, register a user 
+            <a href="http://auth-rbahal.rhcloud.com/#/register" target="_blank">here</a>
+        and then authorize the user by  
+            <a href="http://auth-rbahal.rhcloud.com/#/login" target="_blank">loggin in</a>
+        </h4>
+        <hr />
+        <h3>About Experiment</h3>
+        <p>
+            An application requires authorization to protect data and specific user information. In order to provide a simple yet effective authorization 
+            strategy, Passport is used as an authentication middleware for Node.js
+            <br>
+            This is done by introducing PassportJS as a middle middle-ware in the request chain with a Local Strategy, which is a conventional
+            username-password authentication in our case.
+            <br>
+            If the user is successfully authorized by passport, then it will be inserted into the body. Otherwise, "false" will be 
+            inserted into the body and we may control the behaviour by throwing a error message on receiving the unauthorized(401)
+            request.<br><br>
+            <h3>CODE</h3>
+            <code>
+                app.post("/login", passport.authenticate('local'), function(req, res){<br>
+ 	                var user = req.user;<br>
+ 	                console.log(user);<br>
+ 	                res.json(user);<br>
+                });<br>
+            </code>
+        </p>
+        The authorized user is displayed the user's set object after redirecting him to the profile. The code for the redirection on the
+        client side:
+        <br />
+        <code>
+            app.controller("LoginController", function($scope, $http, $location, $rootScope){<br>
+	            $scope.login = function(user){<br>
+		        console.log(user);<br><br>
+		        
+                //Request the server(Passport) with the POST method<br>
+		        //Passport will reply with a authorized user object or 401 error<br>
+		        $http.post("/login", user)<br>
+		            .success (function(res){<br>
+			        console.log(res);<br><br>
+
+			    //then navigate to the Profile Page<br>
+			    $rootScope.currentUser = res;<br>
+			    $location.url("/profile");<br>
+		        });<br>
+	            }<br>
+            });<br>
+        </code>
+        <br>
+        This experiment will be used in the project to successfully intercept the user when he tries to access information that will require 
+        him to log in.
+        <h4>Source</h4>
+        <a href="../../fileview/Default.aspx?~/Experiments/authorization-passportjs/passport-auth.html" target="_blank">HTML</a>
+        <a href="../../fileview/Default.aspx?~/Experiments/authorization-passportjs/server02.js" target="_blank">SERVER</a>
+        <hr />
+        <h3>References</h3>
+        <a href="https://www.youtube.com/watch?v=dXkqNWLyJ7E">Prof. Jose's Youtube Channel</a><br /> 
+    </div>
+</body>
+</html>

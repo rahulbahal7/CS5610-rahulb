@@ -1,0 +1,8 @@
+﻿../../story/whatisnext.htm?../experiments/authorization-passportjs/      What is Next?
+passport-auth.html														 Authorization using PassportJS
+protect-url.html														 Accessing Protected URL 
+register-user.html														 Registering a User
+validate-user-from-db.html												 Validating a User from Database
+logout-redirect.html													 Redirecting After Logging Out
+
+

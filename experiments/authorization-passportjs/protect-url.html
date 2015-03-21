@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title>URL Protection</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+	<h1>URL Protection using PassportJS</h1><hr/>
+        <h4>Click <a href="http://auth-rbahal.rhcloud.com/#/login" target="_blank">here</a> to login with a valid user. Then access
+            <a href="http://auth-rbahal.rhcloud.com/api/users" target="_blank">this URL</a>
+        </h4>
+        <hr />
+        <h3>About Experiment</h3>
+        <p>
+            An application may provide it's data to to third party clients through it's API. Depending upon the type of information being provided,
+            a user may be required to be authorized.
+            <br>
+            In case the information must be provided only to the authorized users, the URL must be protected and accessible after validating the user.
+            <br>
+            <h3>CODE</h3>
+            <code>
+                app.get("/api/users", auth, function(req, res){<br>
+	                res.json(users);<br>
+                });<br>
+            </code>
+            <br />
+            "auth" is called before the requested data is sent back to the user. When auth() is called, the user is embedded in the 
+            request object and is validated. If it is authorized, the next function or item in the execution chain is executed, 
+            otherwise a 401(unauthorized) is sent back.<br />
+            The auth function contains the following code:<br />
+            <code>
+                var auth = function(req, res, next)<br>
+                {<br>
+                 if (!req.isAuthenticated())<br>
+                    res.send(401);<br>
+                 else<br>
+                     next(); <br>
+                };<br>
+            </code><br>
+        </p>
+        <br>
+        This experiment will be used in the project to successfully intercept the user when he tries to access information for information
+        regarding "repositories" of the users.
+        <h4>Source</h4>
+        <a href="../../fileview/Default.aspx?~/Experiments/authorization-passportjs/protect-url.html" target="_blank">HTML</a>
+        <a href="../../fileview/Default.aspx?~/Experiments/authorization-passportjs/server02.js" target="_blank">SERVER</a>
+        <hr />
+        <h3>References</h3>
+        <a href="https://www.youtube.com/watch?v=dXkqNWLyJ7E">Prof. Jose's Youtube Channel</a><br /> 
+    </div>
+</div>
+</body>
+</html>
