@@ -1,5 +1,6 @@
 ﻿../story/whatisnext.htm?../experiments/									Experiments
-../story/index.htm?../experiments/html_css/story.txt					WEEK 1,2 - HTML and CSS
+../story/index.htm?../experiments/html_css/story.txt					Week 1 - HTML
+../story/index.htm?../experiments/html_css/story.txt					Week 2 - CSS
 ../story/index.htm?../experiments/bootstrap_js/story.txt				Week 3 - Bootstrap and Javascript
 ../story/index.htm?../experiments/jquery_ajax/story.txt					Week 4 - JQuery and Ajax
 ../story/index.htm?../experiments/ajax_angular/story.txt				Week 5 - Ajax, AngularJS
@@ -7,3 +8,4 @@
 ../story/index.htm?../experiments/node_openshift/story.txt				Week 7 - NodeJS and OpenShift
 ../story/index.htm?../experiments/mongo_openshift/story.txt				Week 8 - MongoDB and Mongoose
 ../story/index.htm?../experiments/authorization-passportjs/story.txt	Week 9 - PassportJS Authorization
+../story/index.htm?../experiments/experiments_for_project/story.txt		Tutorials and Experiments for Project

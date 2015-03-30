@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>Github API Introduction</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+	<h1>Github API Introduction</h1><hr/>
+        <h3>About Experiment</h3>
+        <p>
+            This experiment will describe the behaviour of the Github API and resources that make up the official GitHub API v3. 
+            <br>
+            All API access is over HTTPS, and accessed from the <code>api.github.com</code> domain. All data is sent and received in JSON format.
+            <br>
+            <h3>CODE</h3>
+            <code>
+                HTTP/1.1 200 OK<br>
+                Server: nginx<br>
+                Date: Fri, 12 Oct 2012 23:33:14 GMT<br>
+                Content-Type: applicationjson; charset=utf-8<br>
+                Connection: keep-alive<br>
+                Status: 200 OK<br>
+                ETag: "a00049ba79152d03380c34652f2cb612"<br>
+                X-GitHub-Media-Type: github.v3<br>
+                X-RateLimit-Limit: 5000<br>
+                X-RateLimit-Remaining: 4987<br>
+                X-RateLimit-Reset: 1350085394<br>
+                Content-Length: 5<br>
+                Cache-Control: max-age=0, private, must-revalidate<br>
+                X-Content-Type-Options: nosniff<br>
+            </code>
+            <br />
+            On the client side, the redirection is handled so that the user is navigated back to the Home page after Logging out of the 
+            application.<br />
+            <h3>Pagination</h3>
+            Requests that return multiple items will be paginated to 30 items by default. You can specify further
+            pages with the <code>?page </code>parameter. 
+            For some resources, you can also set a custom page size up to 100 with the <code>?per_page</code> parameter. Note that 
+            for technical reasons not all endpoints respect the ?per_page parameter, see events for example.
+            <br />
+            <code>
+                api.github.com/user/repos?page=3&per_page=100
+            </code><br>
+        </p>
+        <br>
+        The API can is used for requesting public information from Github. Some of these requests require authentication 
+        and/or callbacks. Some of the prominent API functionalities are:
+        <ul>
+            <li>Events and Notifications - Activity</li>
+            <li>Gists</li>
+            <li>Commits - Git Data</li>
+            <li>Issues</li>
+            <li>Organizations</li>
+            <li>Pull Requests</li>
+            <li>Repositories</li>
+            <li>Github Search</li>
+            <li>User Information</li>
+        </ul>
+        <hr />
+        <h4>Source</h4>
+        <a href="../../fileview/Default.aspx?~/Experiments/experiments_for_project/git_api_intro.html" target="_blank">HTML</a>
+        <hr />
+        <h3>References</h3>
+        <a href="https://developer.github.com/v3/">Github API Reference</a><br /> 
+    </div>
+</body>
+</html>

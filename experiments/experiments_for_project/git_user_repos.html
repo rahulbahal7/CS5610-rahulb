@@ -1,0 +1,87 @@
+<html>
+<head>
+	<title>Github API - User Information</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+	<h1>Github API - User Information</h1><hr/>
+        <h3>About Experiment</h3>
+        <p>
+            This experiment describes the use of the Git API to list the infomration about a user's public repositories. To 
+            List public repositories for the specified user, a GET request has to be sent in the following way:<br />
+            <code>GET /users/:username/repos</code>
+            <br>
+            The user's public information can be retrieved using the Github API by sending a GET request in the following manner:
+            <code>GET /users/:username</code>
+            <br />
+            <h3>Sample Response for the above request:</h3>
+            <code>
+               [                                                                                                   <br>
+                  {                                                                                                 <br>
+                    "id": 1296269,                                                                                  <br>
+                    "owner": {                                                                                      <br>
+                      "login": "octocat",                                                                           <br>
+                      "id": 1,                                                                                      <br>
+                      "avatar_url": "https://github.com/images/error/octocat_happy.gif",                            <br>
+                      "gravatar_id": "",                                                                            <br>
+                      "url": "https://api.github.com/users/octocat",                                                <br>
+                      "html_url": "https://github.com/octocat",                                                     <br>
+                      "followers_url": "https://api.github.com/users/octocat/followers",                            <br>
+                      "following_url": "https://api.github.com/users/octocat/following{/other_user}",               <br>
+                      "gists_url": "https://api.github.com/users/octocat/gists{/gist_id}",                          <br>
+                      "starred_url": "https://api.github.com/users/octocat/starred{/owner}{/repo}",                 <br>
+                      "subscriptions_url": "https://api.github.com/users/octocat/subscriptions",                    <br>
+                      "organizations_url": "https://api.github.com/users/octocat/orgs",                             <br>
+                      "repos_url": "https://api.github.com/users/octocat/repos",                                    <br>
+                      "events_url": "https://api.github.com/users/octocat/events{/privacy}",                        <br>
+                      "received_events_url": "https://api.github.com/users/octocat/received_events",                <br>
+                      "type": "User",                                                                               <br>
+                      "site_admin": false                                                                           <br>
+                    },                                                                                              <br>
+                    "name": "Hello-World",                                                                          <br>
+                    "full_name": "octocat/Hello-World",                                                             <br>
+                    "description": "This your first repo!",                                                         <br>
+                    "private": false,                                                                               <br>
+                    "fork": false,                                                                                  <br>
+                    "url": "https://api.github.com/repos/octocat/Hello-World",                                      <br>
+                    "html_url": "https://github.com/octocat/Hello-World",                                           <br>
+                    "clone_url": "https://github.com/octocat/Hello-World.git",                                      <br>
+                    "git_url": "git://github.com/octocat/Hello-World.git",                                          <br>
+                    "ssh_url": "git@github.com:octocat/Hello-World.git",                                            <br>
+                    "svn_url": "https://svn.github.com/octocat/Hello-World",                                        <br>
+                    "mirror_url": "git://git.example.com/octocat/Hello-World",                                      <br>
+                    "homepage": "https://github.com",                                                               <br>
+                    "language": null,                                                                               <br>
+                    "forks_count": 9,                                                                               <br>
+                    "stargazers_count": 80,                                                                         <br>
+                    "watchers_count": 80,                                                                           <br>
+                    "size": 108,                                                                                    <br>
+                    "default_branch": "master",                                                                     <br>
+                    "open_issues_count": 0,                                                                         <br>
+                    "has_issues": true,                                                                             <br>
+                    "has_wiki": true,                                                                               <br>
+                    "has_pages": false,                                                                             <br>
+                    "has_downloads": true,                                                                          <br>
+                    "pushed_at": "2011-01-26T19:06:43Z",                                                            <br>
+                    "created_at": "2011-01-26T19:01:12Z",                                                           <br>
+                    "updated_at": "2011-01-26T19:14:43Z",                                                           <br>
+                    "permissions": {                                                                                <br>
+                      "admin": false,                                                                               <br>
+                      "push": false,                                                                                <br>
+                      "pull": true                                                                                  <br>
+                    }                                                                                               <br>
+                  }                                                                                                 <br>
+                ]<br>
+            </code>
+        </p>
+        <br>
+        <hr />
+        <h4>Source</h4>
+        <a href="../../fileview/Default.aspx?~/Experiments/experiments_for_project/git_user_repos.html" target="_blank">HTML</a>
+        <hr />
+        <h3>References</h3>
+        <a href="https://developer.github.com/v3/">Github API Reference</a><br /> 
+    </div>
+</body>
+</html>

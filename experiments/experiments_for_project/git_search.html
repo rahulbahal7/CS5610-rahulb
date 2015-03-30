@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>Github API - Search</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+	<h1>Github API - Search</h1><hr/>
+        <h3>About Experiment</h3>
+        <p>
+            This experiment describeshow the Github API can be used to search for some information. For example, to search for users
+            according to their Github usernames, the username needs to be supplied to the API as a GET request for which the
+            following action needs to be performed:
+            <br>
+            <code>$http.get("https://api.github.com/search/users?q=" + $scope.username)</code>
+            <br>
+            <h3>Sample Response for the above request:</h3>
+            <code>
+                {<br>
+                  "total_count": 12,<br>
+                  "incomplete_results": false,<br>
+                  "items": [<br>
+                    {<br>
+                      "login": "mojombo",<br>
+                      "id": 1,<br>
+                      "avatar_url": "https://secure.gravatar.com/avatar/25c7c18223fb42a4c6ae1c8db6f50f9b?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",<br>
+                      "gravatar_id": "",<br>
+                      "url": "https://api.github.com/users/mojombo",<br>
+                      "html_url": "https://github.com/mojombo",<br>
+                      "followers_url": "https://api.github.com/users/mojombo/followers",<br>
+                      "subscriptions_url": "https://api.github.com/users/mojombo/subscriptions",<br>
+                      "organizations_url": "https://api.github.com/users/mojombo/orgs",<br>
+                      "repos_url": "https://api.github.com/users/mojombo/repos",<br>
+                      "received_events_url": "https://api.github.com/users/mojombo/received_events",<br>
+                      "type": "User",<br>
+                      "score": 105.47857<br>
+                    }<br>
+                  ]<br>
+                }<br>
+            </code>
+        </p>
+        <br>
+        <hr />
+        <h4>Source</h4>
+        <a href="../../fileview/Default.aspx?~/Experiments/experiments_for_project/git_search.html" target="_blank">HTML</a>
+        <hr />
+        <h3>References</h3>
+        <a href="https://developer.github.com/v3/">Github API Reference</a><br /> 
+    </div>
+</body>
+</html>

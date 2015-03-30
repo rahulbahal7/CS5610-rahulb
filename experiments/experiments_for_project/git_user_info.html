@@ -1,0 +1,63 @@
+<html>
+<head>
+	<title>Github API - User Repositories</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+	<h1>Github API - User Repositories</h1><hr/>
+        <h3>About Experiment</h3>
+        <p>
+            This experiment describes Many of the resources on the users API provide a shortcut for getting information about the 
+            currently authenticated user. If a request URL does not include a <code>:username</code> parameter then the response will 
+            be for the logged in user.
+            <br>
+            The user's public information can be retrieved using the Github API by sending a GET request in the following manner:
+            <code>GET /users/:username</code>
+            <br>
+            <h3>Sample Response for the above request:</h3>
+            <code>
+                {<br>
+              "login": "octocat",<br>
+              "id": 1,<br>
+              "avatar_url": "https://github.com/images/error/octocat_happy.gif",<br>
+              "gravatar_id": "",<br>
+              "url": "https://api.github.com/users/octocat",<br>
+              "html_url": "https://github.com/octocat",<br>
+              "followers_url": "https://api.github.com/users/octocat/followers",<br>
+              "following_url": "https://api.github.com/users/octocat/following{/other_user}",<br>
+              "gists_url": "https://api.github.com/users/octocat/gists{/gist_id}",<br>
+              "starred_url": "https://api.github.com/users/octocat/starred{/owner}{/repo}",<br>
+              "subscriptions_url": "https://api.github.com/users/octocat/subscriptions",<br>
+              "organizations_url": "https://api.github.com/users/octocat/orgs",<br>
+              "repos_url": "https://api.github.com/users/octocat/repos",<br>
+              "events_url": "https://api.github.com/users/octocat/events{/privacy}",<br>
+              "received_events_url": "https://api.github.com/users/octocat/received_events",<br>
+              "type": "User",<br>
+              "site_admin": false,<br>
+              "name": "monalisa octocat",<br>
+              "company": "GitHub",<br>
+              "blog": "https://github.com/blog",<br>
+              "location": "San Francisco",<br>
+              "email": "octocat@github.com",<br>
+              "hireable": false,<br>s
+              "bio": "There once was...",<br>
+              "public_repos": 2,<br>
+              "public_gists": 1,<br>
+              "followers": 20,<br>
+              "following": 0,<br>
+              "created_at": "2008-01-14T04:33:35Z",<br>
+              "updated_at": "2008-01-14T04:33:35Z"<br>
+            }<br>
+            </code>
+        </p>
+        <br>
+        <hr />
+        <h4>Source</h4>
+        <a href="../../fileview/Default.aspx?~/Experiments/experiments_for_project/git_user_info.html" target="_blank">HTML</a>
+        <hr />
+        <h3>References</h3>
+        <a href="https://developer.github.com/v3/">Github API Reference</a><br /> 
+    </div>
+</body>
+</html>
