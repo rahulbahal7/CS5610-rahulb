@@ -1,0 +1,93 @@
+<title>Data Storage in MongoDB</title>
+<script type="text/javascript" src="frameworks/jquery-2.1.3.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap-tpls.min.js"></script>
+<script type="text/javascript" src="frameworks/bootstrap.js"></script>
+<link href="assets/css/bootstrap.css" rel="stylesheet" />
+<link href="css/bootstrap.css.map" rel="stylesheet">
+<link rel="stylesheet" href="frameworks/font-awesome-4.3.0/css/font-awesome.min.css" />
+<link href="assets/css/main.css" rel="stylesheet">
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://gitviewer-rbahal.rhcloud.com/" target="_blank"><i class="fa fa-terminal"></i>DRAFTSTAT</a>
+            </div>
+            <!-- navbar-header -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- navbar navbar-inverse navbar-fixed-top -->
+    <br />
+
+    <center><h1>Data Storage in MongoDB</h1></center>
+
+    <div class="container">
+        <p>
+            Since the flow and functionalities in this web application require data to be displayed and verified, there was a need to have a database.
+            MongoDB is being used as a NoSQL database for this application for backend storage. The tables are represented as collections and the 
+            rows(tupples) are represented as documents(JSON documents).
+            <br />
+            The following collections have been used for the project:
+            
+        </p>
+        <table class="table table-striped">
+                <thead>
+                    <strong>
+                    <tr>
+                        <td>Collection</td>
+                        <td>Use in Project</td>
+                    </tr>
+                    </strong>
+                </thead>
+                <tr>
+                    <td>FollowingSchema</td>
+                    <td>This collection is used to store the information about a particular user that the current user is following. The name of the user and 
+                        the rating for that user is handled using this collection.
+                    </td>
+                </tr>
+                <tr>
+                    <td>ProjectSchema</td>
+                    <td>This is the main collection in the project. It stores all the information about a user, i.e, login details, users that the current user
+                        is following with their rating.
+                    </td>
+                </tr>
+                <tr>
+                    <td>MessagesSchema</td>
+                    <td>This collection is used to store all the messages. A message document would contain the sender, receiver, the time at which the message
+                        was sent and the message text itself. The messages for the currently logged in user(receiver) are searched amnd displayed in his "Messages" 
+                        inbox.
+                    </td>
+                </tr>
+            </table>
+        <p>
+            <center>
+            <img id="img" src="assets/img/data_storage.jpg">
+         </center>
+        </p>
+        
+        
+        <br />
+
+    </div>
+    <!-- FOOTER -->
+    <div id="f">
+        <div class="container">
+            <div class="row centered">
+                <a href="https://www.linkedin.com/in/rahulbahal"><i class="fa fa-linkedin"></i></a><<a href="https://www.facebook.com/bahal.rahul"><i class="fa fa-facebook"></i></a>
+                <a href="http://www.github.com/rahulbahal7"><i class="fa fa-github"></i></a>
+
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- Footer -->
+</body>
+
+

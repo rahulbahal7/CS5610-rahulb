@@ -1,0 +1,65 @@
+<title>Rating</title>
+<script type="text/javascript" src="frameworks/jquery-2.1.3.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap-tpls.min.js"></script>
+<script type="text/javascript" src="frameworks/bootstrap.js"></script>
+<link href="assets/css/bootstrap.css" rel="stylesheet" />
+<link href="css/bootstrap.css.map" rel="stylesheet">
+<link rel="stylesheet" href="frameworks/font-awesome-4.3.0/css/font-awesome.min.css" />
+<link href="assets/css/main.css" rel="stylesheet">
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://gitviewer-rbahal.rhcloud.com/" target="_blank"><i class="fa fa-terminal"></i>DRAFTSTAT</a>
+            </div>
+            <!-- navbar-header -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- navbar navbar-inverse navbar-fixed-top -->
+    <br />
+
+    <center><h1>Rating</h1></center>
+
+    <div class="container">
+        <p>
+            <center>
+            <img id="img" src="assets/img/rating.png">
+        </center>
+        </p>
+        <p>
+            A user can rate other user(s) that he/she is following. The user can select the number of star(s) that he would like to give the other user(out of a maximum of
+            20 stars).
+
+        </p>
+        <p>
+            The stars are stored with the name of the user(that the logged in user is following) in the form of FollowingSchema. That format is then
+            embedded in an array <code>"following":[{name,stars}, .."</code> that is embedded in the ProjectSchema collection.
+            The stars associated with a user that is being followed by the logged in user are stored with the name. A change in the rating is only 
+            reflected in the rating in the database.
+        </p>
+        <br />
+
+    </div>
+    <!-- FOOTER -->
+    <div id="f">
+        <div class="container">
+            <div class="row centered">
+                <a href="https://www.linkedin.com/in/rahulbahal"><i class="fa fa-linkedin"></i></a><<a href="https://www.facebook.com/bahal.rahul"><i class="fa fa-facebook"></i></a>
+                <a href="http://www.github.com/rahulbahal7"><i class="fa fa-github"></i></a>
+
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- Footer -->
+</body>
+
+

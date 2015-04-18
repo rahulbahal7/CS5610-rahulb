@@ -1,0 +1,69 @@
+<title>Messaging</title>
+<script type="text/javascript" src="frameworks/jquery-2.1.3.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap-tpls.min.js"></script>
+<script type="text/javascript" src="frameworks/bootstrap.js"></script>
+<link href="assets/css/bootstrap.css" rel="stylesheet" />
+<link href="css/bootstrap.css.map" rel="stylesheet">
+<link rel="stylesheet" href="frameworks/font-awesome-4.3.0/css/font-awesome.min.css" />
+<link href="assets/css/main.css" rel="stylesheet">
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://gitviewer-rbahal.rhcloud.com/" target="_blank"><i class="fa fa-terminal"></i>DRAFTSTAT</a>
+            </div>
+            <!-- navbar-header -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- navbar navbar-inverse navbar-fixed-top -->
+    <br />
+
+    <center><h1>Messaging</h1></center>
+
+    <div class="container">
+            <p>
+            <center>
+            <img id="img" src="assets/img/message.png">
+        </center>
+        </p>
+        <p>
+            A user can send messages to the user(s) that he/she is following. Upon clicking the "envelope" icon next to the user that the current user wants to send a message, a
+            modal will be opened and the user can type in message that he wants to send by clicking the "Send Message" button.
+
+        </p>
+        <p>
+            The message functionality is implemented using the MessageSchema collection in the database.
+            The messages is stored in the following format:
+            <ul>
+                <li>Sender - The logged in user is the sender.</li>
+                <li>Receiver - The user against which the envelope icon was clicked is the intended recipient.</li>
+                <li>Message - The message body is contained as text.</li>
+                <li>Time - This is done automatically by the system. The current time is allocated to the message.</li>
+            </ul>
+
+        </p>
+        <br />
+    </div>
+    <!-- FOOTER -->
+    <div id="f">
+        <div class="container">
+            <div class="row centered">
+                <a href="https://www.linkedin.com/in/rahulbahal"><i class="fa fa-linkedin"></i></a><<a href="https://www.facebook.com/bahal.rahul"><i class="fa fa-facebook"></i></a>
+                <a href="http://www.github.com/rahulbahal7"><i class="fa fa-github"></i></a>
+
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- Footer -->
+</body>
+
+

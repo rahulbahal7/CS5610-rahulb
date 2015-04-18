@@ -1,0 +1,16 @@
+﻿../../story/whatisnext.htm?../project/documentation/      			What is Next?
+introduction.html														Introduction
+flow.html																Flow of the Project
+login-register.html														SignIn / Registration
+home.html																Home Page
+search-add.html															Searching and Adding Users
+following.html															Following
+information.html														Information about Users
+rating.html																Rating
+message.html															Send Message
+messages.html															Messages Inbox
+data-storage.html														Data Storage for Project(MongoDB)
+future-scope.html														Future Scope
+thank-you.html															Thank You Note
+
+
